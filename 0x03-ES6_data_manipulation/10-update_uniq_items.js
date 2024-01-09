@@ -1,11 +1,10 @@
-const groceriesList = () => {
-  const map = new Map();
-  map.set('Apples', 10);
-  map.set('Tomatoes', 10);
-  map.set('Pasta', 1);
-  map.set('Rice', 1);
-  map.set('Banana', 5);
-  return map;
-};
-
-export default groceriesList;
+export default function updateUniqueItems(map) {
+  if (!(map instanceof Map)) {
+    throw new Error('Cannot process');
+  }
+  map.forEach((value, key) => {
+    if (value === 1) {
+      map.set(key, 100);
+    }
+  });
+}
