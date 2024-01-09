@@ -1,10 +1,10 @@
-const getListStudentIds = (students) => {
-  // Check if the argument is an array
-  if (!Array.isArray(students)) {
-    return [];
+const getListStudentIds = (listStudents) => {
+  let listStudentIds = [];
+  if (!(listStudents instanceof Array)) {
+    return listStudentIds;
   }
-  return students.map(student => student.id);
+  listStudentIds = listStudents.map((student) => student.id);
+  return listStudentIds;
 };
-const students = getListStudents();
-const studentIds = getListStudentIds(students);
-console.log(studentIds);
+
+export default getListStudentIds;
